@@ -18,7 +18,7 @@ void jack_bauer(void)
 	{
 		if (h2 == 2)
 		{
-			/*Restrain to 23h, not 29*/
+			/*Restrain to 24h, not 29*/
 			a = 3;
 		}
 		h1 = 0;
