@@ -2,7 +2,7 @@
 
 /**
  * times_table - prints times table
- * Return:void
+ * Return: void
  */
 
 void times_table(void)
@@ -29,15 +29,14 @@ void times_table(void)
 			else
 			{
 				_putchar('0' + rep / 10);
-				_putchar'0' + rep  % 10);
+				_putchar('0' + rep % 10);
 			}
-
-			if (b < 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
-			b++;
+			 if (b < 9)
+			 {
+				 _putchar(',');
+				 _putchar(' ');
+			 }
+			 b++;
 		}
 		_putchar('\n');
 		a++;
