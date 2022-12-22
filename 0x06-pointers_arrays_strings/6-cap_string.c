@@ -1,33 +1,31 @@
 #include "main.h"
 /**
- * cap_string - function that capitalize first character of a word
- * @str: stringto capitalize
- * Return: returns the capitalized string
+ * cap_string - capitalizes each first letter of word string
+ * @s: string pointer
+ * Return: s
  */
 
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int index = 0;
+	int k = 0, i;
+	int sep_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	while (str[++index])
+	if (*(s + k) >= 97 && *(s + k) <= 122)
+		*(s + k) = *(s + k) - 32;
+	k++;
+
+	while (*(s + k) != '\0')
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
-
-		for (str[index - 1] == ' ' ||
-			str[index - 1] == '\t' ||
-			str[index - 1] == '\n' ||
-			str[index - 1] == ',' ||
-			str[index - 1] == ';' ||
-			str[index - 1] == '.' ||
-			str[index - 1] == '!' ||
-			str[index - 1] == '?' ||
-			str[index - 1] == '"' ||
-			str[index - 1] == '(' ||
-			str[index - 1] == ')' ||
-			str[index - 1] == '{' ||
-			str[index - 1] == '}')
-		str[index] -= 32;
+		for (i = 0; i < 13; i++)
+		{
+			if (*(s + k) == sep_words[i])
+			{
+				if ((*(s + (k + 1)) >= 97) && (*(s + (k + 1)) <= 122))
+					*(s + (k + 1)) = *(s + (k + 1)) - 32;
+				break;
+			}
+		}
+		k++;
 	}
-	return (str);
+	return (s);
 }
