@@ -20,7 +20,7 @@ int _lenght(char *s)
  */
 int checkp(int i, int lg, char *s)
 {
-	if (ig > 0)
+	if (lg > 0)
 	{
 		if (s[i] == s[lg])
 		{
