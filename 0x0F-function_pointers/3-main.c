@@ -1,11 +1,10 @@
 #include "3-calc.h"
-
 /**
- * main - checks arguments
- * @argc: number of arguments
- * @argv: array of arguments
+ * main - checks arguments.
+ * @argc: argument count.
+ * @argv: argument vector.
  *
- * Return: error if number of argumentsis wrong
+ * Return: error if numberof arguments is wrong.
  */
 int main(int argc, char *argv[])
 {
@@ -18,7 +17,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	/* check if theres only one operator*/
-	if (argc[2][1] != '\0')
+	if (argv[2][1] !=  '\0')
 	{
 		printf("Error\n");
 		exit(99);
