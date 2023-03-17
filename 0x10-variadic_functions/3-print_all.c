@@ -1,10 +1,10 @@
-#include <stdlib.h>
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * print_all - prints anything
- * @format: a lists of types of arguments passed to the function.
+ * @format: a lists  of types of arguments passed to the function.
  *
  * Return: void.
  */
@@ -16,7 +16,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	separator = "";
+	separator = " ";
 
 	i = 0;
 	while (t_arg[j])
@@ -24,7 +24,7 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				printf("%s%c", separator, va_arg(args, int));
+				printf("%s%c", separator,va_arg(args, int));
 				break;
 			case 'i':
 				printf("%s%d", separator, va_arg(args, int));
@@ -36,16 +36,16 @@ void print_all(const char * const format, ...)
 				str = va_arg(args, char *);
 				if (s == NULL)
 					s = "(nil)";
-					printf("%s%s", separator, s);
-					break;
-			default:
-					i++;
-					continue;
+				printf("%s%s", separator, s);
+				break;
+defaul:
+				i++;
+				continue;
 		}
 		separator = ", ";
 		i++;
 	}
-
+	
 	printf("\n");
 	va_end(args);
 }
